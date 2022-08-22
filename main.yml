@@ -10,4 +10,6 @@
       object: "/{{ org_id }}/{{ project_id }}/object.{{ ansible_date_time.epoch }}.yaml"
       content: "{{ lookup('template', 'templates/object.yaml.j2') }}"
       mode: put
+      encrypt: false
+      rgw: true
       s3_url: "http://ams3.digitaloceanspaces.com"
