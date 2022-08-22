@@ -2,6 +2,7 @@
 - name: s3 demo
   hosts: all
   connection: local
+  gather_facts: yes
   tasks:
   - name: Save file in object storage
     amazon.aws.aws_s3:
