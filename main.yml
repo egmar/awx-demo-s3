@@ -11,4 +11,6 @@
       content: "{{ lookup('template', 'templates/object.yaml.j2') }}"
       mode: put
       encrypt: false
+      rgw: true
+      permission: []
       s3_url: "http://s3.eu-de.cloud-object-storage.appdomain.cloud"
