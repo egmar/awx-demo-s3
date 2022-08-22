@@ -1,1 +1,11 @@
-
+---
+hosts: all
+connection: local
+tasks:
+- name: Save file in object storage
+  amazon.aws.aws_s3:
+    bucket: mybucket
+    object: /abc/project_name/file
+    content: "{{ lookup('template', 'templates/object.yaml.j2') }}"
+    mode: put
+    s3_url: "http://localhost:8000"
