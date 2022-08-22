@@ -5,7 +5,7 @@
   gather_facts: yes
   tasks:
   - name: Save file in object storage
-    amazon.aws.aws_s3_object:
+    amazon.aws.aws_s3:
       bucket: awx-demo-tf-state-001
       object: "/{{ org_id }}/{{ project_id }}/object.{{ ansible_date_time.epoch }}.yaml"
       content: "{{ lookup('template', 'templates/object.yaml.j2') }}"
